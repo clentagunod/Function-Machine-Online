@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Function Machine Online</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="menu-page">
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <main class="menu-container">
+    <div class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="14" width="52" height="32" rx="6" fill="var(--accent)" opacity="0.15"/>
+          <rect x="4" y="14" width="52" height="32" rx="6" stroke="var(--accent)" stroke-width="2"/>
+          <text x="30" y="36" text-anchor="middle" font-family="Syne" font-weight="800" font-size="18" fill="var(--accent)">f(x)</text>
+          <path d="M56 30 L64 30" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M-4 30 L4 30" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="title-block">
+        <h1 class="game-title">Function Machine</h1>
+        <span class="game-subtitle">ONLINE</span>
+      </div>
+    </div>
+
+    <p class="tagline">Test your math skills. Feed the machine. Solve the function.</p>
+
+    <button class="play-btn" id="playBtn" onclick="startGame()">
+      <span class="btn-text">Play</span>
+      <span class="btn-arrow">→</span>
+    </button>
+
+    <div class="highscore-card" id="highscoreCard">
+      <span class="hs-label">HIGH SCORE</span>
+      <span class="hs-value" id="highscoreDisplay">0</span>
+    </div>
+  </main>
+
+  <footer class="menu-footer">
+    <span>Clent Industries &copy; 2025</span>
+  </footer>
+
+  <script src="javascript/menu.js"></script>
+</body>
+</html>

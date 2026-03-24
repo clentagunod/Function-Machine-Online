@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Function Machine — Play</title>
+  <link rel="stylesheet" href="../styles/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body class="game-page">
+
+  <div class="bg-grid"></div>
+
+  <!-- HUD -->
+  <header class="game-hud">
+    <button class="back-btn" onclick="goBack()">← Menu</button>
+    <div class="hud-stats">
+      <div class="stat-chip">
+        <span class="stat-label">SCORE</span>
+        <span class="stat-value" id="scoreDisplay">0</span>
+      </div>
+      <div class="stat-chip timer-chip">
+        <span class="stat-label">TIME</span>
+        <span class="stat-value" id="timerDisplay">60</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Game Area -->
+  <main class="game-container">
+
+    <!-- Machine Visual -->
+    <div class="machine-wrapper" id="machineWrapper">
+      <div class="machine-card" id="machineCard">
+        <!-- Arrow in -->
+        <div class="machine-arrow arrow-in">
+          <span class="input-label" id="inputValueLabel">?</span>
+          <svg viewBox="0 0 80 20"><line x1="0" y1="10" x2="70" y2="10" stroke="var(--accent)" stroke-width="2"/><polygon points="70,5 80,10 70,15" fill="var(--accent)"/></svg>
+        </div>
+
+        <!-- Machine Body (placeholder until user provides image) -->
+        <div class="machine-body" id="machineBody">
+          <img id="machineImg" src="" alt="Function Machine" style="display:none;"/>
+          <div class="machine-placeholder" id="machinePlaceholder">
+            <div class="func-display">
+              <span class="func-label">f(x) =</span>
+              <span class="func-rule" id="funcRule">2x + 3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow out -->
+        <div class="machine-arrow arrow-out">
+          <svg viewBox="0 0 80 20"><line x1="0" y1="10" x2="70" y2="10" stroke="var(--accent2)" stroke-width="2"/><polygon points="70,5 80,10 70,15" fill="var(--accent2)"/></svg>
+          <span class="output-label">f(x) = <span id="outputValueLabel">?</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <label class="input-hint" for="answerInput">Enter the output value of f(x)</label>
+      <div class="input-row">
+        <input
+          type="number"
+          id="answerInput"
+          class="answer-input"
+          placeholder="Your answer..."
+          autocomplete="off"
+        />
+        <button class="submit-btn" id="submitBtn" onclick="submitAnswer()">
+          Submit
+        </button>
+      </div>
+      <div class="feedback-msg" id="feedbackMsg"></div>
+    </div>
+
+    <!-- Question counter -->
+    <div class="question-counter">
+      Question <span id="qNum">1</span> of <span id="qTotal">10</span>
+    </div>
+
+  </main>
+
+  <!-- Game Over Overlay -->
+  <div class="overlay" id="gameOverlay">
+    <div class="overlay-card" id="overlayCard">
+      <h2 class="overlay-title" id="overlayTitle">Time's Up!</h2>
+      <div class="overlay-score">
+        <span class="ov-label">Your Score</span>
+        <span class="ov-value" id="overlayScore">0</span>
+      </div>
+      <div class="overlay-hs">
+        <span class="ov-hs-label" id="overlayHsLabel">High Score: 0</span>
+      </div>
+      <div class="overlay-btns">
+        <button class="play-btn small" onclick="restartGame()">Play Again</button>
+        <button class="back-btn-lg" onclick="goBack()">Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../javascript/game.js"></script>
+</body>
+</html>
